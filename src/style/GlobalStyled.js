@@ -1,6 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
+export const mainInt = {
+  sideInt: "0 30px",
+};
+
+export const myColor = {
+  mainColor: "#F64D4D",
+};
+
 export const GlobalStyled = createGlobalStyle`
     ${reset}
 

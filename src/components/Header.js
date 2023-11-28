@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import { routes } from "../routes";
 import styled from "styled-components";
+import { mainInt, myColor } from "../style/GlobalStyled";
 
 const SHeader = styled.div`
   width: 100vw;
-  height: 10vh;
+  height: 12vh;
   display: flex;
   flex-direction: column;
-  background-color: #808080;
+  border-bottom: 1px solid #dbdbdb;
+  padding: ${mainInt.sideInt};
 `;
 
 const Logo = styled.div`
@@ -17,11 +19,57 @@ const Logo = styled.div`
   font-weight: 700;
 `;
 
-const HeaderBottom = styled.div``;
+const HeaderBottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
-const Menu = styled.div``;
+const Menu = styled.ul`
+  display: flex;
+  width: 45%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: 700;
 
-const HeaderSearch = styled.div``;
+  li {
+    width: 25%;
+  }
+
+  a {
+    color: #808080;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    color: ${myColor.mainColor};
+  }
+`;
+
+const HeaderSearch = styled.div`
+  text-align: center;
+  line-height: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  width: 25%;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #808080;
+    transition: 0.3s;
+  }
+
+  a:hover {
+    color: ${myColor.mainColor};
+  }
+
+  img {
+    width: 40px;
+    margin-bottom: -5px;
+  }
+`;
 
 const SearchImg = styled.div``;
 
@@ -56,7 +104,10 @@ export const Header = () => {
         <HeaderSearch>
           <Link to={routes.search}>
             Search
-            <SearchImg />
+            <img
+              src="https://cdn.discordapp.com/attachments/1071326637540524122/1178975235412865024/searchImg.png"
+              alt="search img"
+            />
           </Link>
         </HeaderSearch>
       </HeaderBottom>
