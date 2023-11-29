@@ -10,6 +10,10 @@ const SHeader = styled.div`
   flex-direction: column;
   border-bottom: 1px solid #dbdbdb;
   padding: ${mainInt.sideInt};
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
 `;
 
 const Logo = styled.div`
