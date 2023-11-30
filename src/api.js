@@ -15,5 +15,8 @@ const options = {
   },
 };
 
+export const nowPlaying = () =>
+  fetch(movieUrl("now_playing"), options).then((res) => res.json());
+
 export const popular = () =>
   fetch(movieUrl("popular"), options).then((res) => res.json());

@@ -8,9 +8,10 @@ const FooterCon = styled.footer`
   justify-content: center;
   align-items: center;
   border-top: 1px solid #dbdbdb;
-  position: absolute;
+  /* position: fixed;
   left: 0;
   bottom: 0;
+  z-index: 5; */
 `;
 
 export const Footer = () => {
