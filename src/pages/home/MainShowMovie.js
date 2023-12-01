@@ -35,7 +35,7 @@ export const MainShowMovie = ({ movieData }) => {
           <SwiperSlide key={data.id}>
             <PostWrap>
               <Link to={`/detail/${data.id}`}>
-                <MainBanner $bgUrl={data.poster_path} />
+                <MainBanner $bgUrl={data.backdrop_path} />
               </Link>
             </PostWrap>
           </SwiperSlide>

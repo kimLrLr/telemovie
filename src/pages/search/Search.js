@@ -3,6 +3,7 @@ import { movieSearch } from "../../api";
 import { useState } from "react";
 import styled from "styled-components";
 import { IMG_URL } from "../../constants";
+import { mainInt } from "../../style/GlobalStyled";
 
 const Title = styled.h3``;
 
@@ -10,17 +11,15 @@ const Form = styled.form``;
 
 const Input = styled.input``;
 
+const SearchWrap = styled.div`
+  padding: ${mainInt.sideInt};
+`;
+
 const ConWrap = styled.div`
   display: grid;
-  /* =>gird가 적용될 부모에게 사용 플랙스와 동일 */
   grid-template-columns: repeat(5, 1fr);
-  /* =>그리드 레이아웃을 규칙에 맞게 반복 시킴 */
-  /* =>repeat(가로 개수, 크기값) */
-  /* =>1fr 컨텐츠끼리 1배율씩 똑같은 값으로 크기를 나눠가짐 */
   column-gap: 30px;
-  /* =>가로 컨텐츠 간격 */
   row-gap: 50px;
-  /* =>세로 컨텐츠 간격 */
 `;
 
 const Con = styled.div``;
@@ -56,7 +55,7 @@ export const Search = () => {
   };
 
   return (
-    <div>
+    <SearchWrap>
       <Title style={{ marginTop: "200px", marginBottom: "20px" }}>
         찾으시는 영화가 있으신가요?
       </Title>
@@ -81,6 +80,6 @@ export const Search = () => {
           ))}
         </ConWrap>
       )}
-    </div>
+    </SearchWrap>
   );
 };
