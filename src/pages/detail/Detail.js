@@ -104,7 +104,7 @@ export const Detail = () => {
             <>
               <Con>
                 <Wrap>
-                  <PosterImg $bgUrl={detailData.poster_path} />
+                  <PosterImg $bgUrl={detailData.backdrop_path} />
                   <TxtWrap>
                     <Title>{detailData.title}</Title>
                     <Genre>
