@@ -56,9 +56,7 @@ export const Search = () => {
 
   return (
     <SearchWrap>
-      <Title style={{ marginTop: "200px", marginBottom: "20px" }}>
-        찾으시는 영화가 있으신가요?
-      </Title>
+      {/* <Title style={{ marginTop: "180px", marginBottom: "20px" }}></Title>
 
       <Form onSubmit={handleSubmit(searchHandler)}>
         <Input
@@ -66,9 +64,9 @@ export const Search = () => {
             required: "검색 내용을 입력해주세요.",
           })}
           type="text"
-          placeholder="검색내용"
+          placeholder="찾으시는 영화가 있으신가요?"
         />
-      </Form>
+      </Form> */}
 
       {term && (
         <ConWrap>
