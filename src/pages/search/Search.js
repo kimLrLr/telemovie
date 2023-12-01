@@ -3,16 +3,41 @@ import { movieSearch } from "../../api";
 import { useState } from "react";
 import styled from "styled-components";
 import { IMG_URL } from "../../constants";
-import { mainInt } from "../../style/GlobalStyled";
+import { mainInt, myColor } from "../../style/GlobalStyled";
 
-const Title = styled.h3``;
+const Form = styled.form`
+  margin-top: 180px;
+  margin-bottom: 20px;
+  position: relative;
+`;
 
-const Form = styled.form``;
+const Input = styled.input`
+  margin: 0 auto;
+  width: 100%;
+  border: 3px solid ${myColor.mainColor};
+  background-color: #fff;
+  line-height: 50px;
+  border-radius: 30px;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 700;
+`;
 
-const Input = styled.input``;
+const Button = styled.button`
+  width: 100px;
+
+  position: absolute;
+  top: 0;
+  right: 0px;
+  border: unset;
+  background-color: ${myColor.mainColor};
+  border-radius: 30px;
+`;
 
 const SearchWrap = styled.div`
   padding: ${mainInt.sideInt};
+  width: 100vw;
+  margin: 0 auto;
 `;
 
 const ConWrap = styled.div`
@@ -56,8 +81,6 @@ export const Search = () => {
 
   return (
     <SearchWrap>
-      {/* <Title style={{ marginTop: "180px", marginBottom: "20px" }}></Title>
-
       <Form onSubmit={handleSubmit(searchHandler)}>
         <Input
           {...register("search", {
@@ -66,7 +89,13 @@ export const Search = () => {
           type="text"
           placeholder="찾으시는 영화가 있으신가요?"
         />
-      </Form> */}
+        <Button>
+          <img
+            src="https://cdn.discordapp.com/attachments/1071326637540524122/1180062807060914196/searchImg_w.png"
+            alt="흰색 돋보기 아이콘"
+          />
+        </Button>
+      </Form>
 
       {term && (
         <ConWrap>
