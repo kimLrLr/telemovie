@@ -17,7 +17,7 @@ const Wrap = styled.div`
   width: 100vw;
   height: 100%;
   display: flex;
-  /* padding: 0 80px; */
+  text-align: center;
 `;
 
 const PosterImg = styled.div`
@@ -45,28 +45,33 @@ const Title = styled.h2`
   margin-bottom: 20px;
 `;
 
+const Genre = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 20px;
+`;
+
+const Release = styled.div`
+  font-size: 18px;
+  font-weight: 600;
+`;
+
 const Rated = styled.div`
   font-size: 18px;
   font-weight: 500;
 `;
 
-const Genre = styled.div`
-  display: flex;
-  flex-direction: column;
-  line-height: 30px;
-`;
-
-const Release = styled.div``;
-
-const Runtime = styled.div`
-  border-bottom: 1px solid #808080;
-  padding-bottom: 40px;
-`;
-
 const Desc = styled.div`
-  margin-top: 40px;
+  background-color: #dbdbdb;
+  max-width: 600px;
+  border-radius: 20px;
+  padding: 50px 40px;
+  font-weight: 600;
+  margin-top: 80px;
   line-height: 30px;
   color: #333;
+  text-align: left;
 `;
 
 export const Detail = () => {
@@ -102,7 +107,6 @@ export const Detail = () => {
                   <PosterImg $bgUrl={detailData.poster_path} />
                   <TxtWrap>
                     <Title>{detailData.title}</Title>
-                    <Rated>평점 {Math.round(detailData.vote_average)}점</Rated>
                     <Genre>
                       {detailData.genres.map((genre) => (
                         <li key={genre.id}>
@@ -110,8 +114,8 @@ export const Detail = () => {
                         </li>
                       ))}
                     </Genre>
-                    <Release>{detailData.release_date}</Release>
-                    <Runtime>런타임 {detailData.runtime}분</Runtime>
+                    <Release>개봉일: {detailData.release_date}</Release>
+                    <Rated>평점 {Math.round(detailData.vote_average)}점</Rated>
                     <Desc>{detailData.overview} </Desc>
                   </TxtWrap>
                 </Wrap>
