@@ -14,15 +14,15 @@ const Con = styled.div`
 `;
 
 const Wrap = styled.div`
-  width: 85%;
-  height: 60%;
+  width: 100vw;
+  height: 100%;
   display: flex;
-  padding: 0 80px;
+  /* padding: 0 80px; */
 `;
 
 const PosterImg = styled.div`
   background-color: salmon;
-  width: 30%;
+  width: 50%;
   height: 100%;
   margin-right: 80px;
   background: url(${IMG_URL}/w1280/${(props) => props.$bgUrl}) no-repeat center /
@@ -31,6 +31,7 @@ const PosterImg = styled.div`
 
 const TxtWrap = styled.div`
   max-width: 600px;
+  padding: 150px 0;
   width: 100%;
   div {
     margin-bottom: 20px;
