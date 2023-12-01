@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { IMG_URL } from "../../constants";
 
 const MainBanner = styled.section`
-  height: 80vh;
+  height: 85vh;
   background-color: lightgray;
   /* position: relative; */
   background: url(${IMG_URL}/original/${(props) => props.$bgUrl}) no-repeat
@@ -13,25 +13,12 @@ const MainBanner = styled.section`
 
 const PostWrap = styled.div`
   padding-top: 12vh;
+  margin-left: 10%;
 `;
 
 const params = {
   spaceBetween: 20,
   slidesPerView: 1.1,
-  // breakpoints: {
-  //   1024: {
-  //     spaceBetween: 20,
-  //     slidesPerView: 5.5,
-  //   },
-  //   640: {
-  //     spaceBetween: 15,
-  //     slidesPerView: 4,
-  //   },
-  //   320: {
-  //     spaceBetween: 10,
-  //     slidesPerView: 3.2,
-  //   },
-  // },
 };
 
 export const MainShowMovie = ({ movieData }) => {

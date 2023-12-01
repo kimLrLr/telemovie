@@ -20,3 +20,11 @@ export const nowPlaying = () =>
 
 export const popular = () =>
   fetch(movieUrl("popular"), options).then((res) => res.json());
+
+export const movieDetail = (id) =>
+  fetch(movieUrl(`${id}`), options).then((res) => res.json());
+
+export const movieSearch = (keyword) => {
+  const searchUrl = baseUrl + `search/movie?query=${keyword}&language=ko-kr`;
+  return fetch(searchUrl, options).then((res) => res.json());
+};
