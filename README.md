@@ -16,5 +16,10 @@
 - [x] api 설정
 - [x] header ui 및 구성
 - [x] footer ui 및 구성
-- [] home ui 및 전체구성
+- [x] home ui 및 전체구성
 - [x] loading 화면
+- [] search UI 설정
+- [] detail UI 설정
+- [] popular UI 설정
+- [] 현재 상영중인 영화 장르별로 나누기
+- [] MainShowMovie에서 스와이퍼 자동재생

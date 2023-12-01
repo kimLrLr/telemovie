@@ -13,12 +13,18 @@ const MainBanner = styled.section`
 
 const PostWrap = styled.div`
   padding-top: 12vh;
-  margin-left: 10%;
+  /* margin-left: 10%; */
 `;
 
 const params = {
   spaceBetween: 20,
   slidesPerView: 1.1,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false, //스와이프 후에 자동 재생
+    loop: true, //반복
+  },
 };
 
 export const MainShowMovie = ({ movieData }) => {

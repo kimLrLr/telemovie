@@ -1,4 +1,3 @@
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { IMG_URL } from "../../constants";
@@ -20,22 +19,28 @@ const Title = styled.h3`
   }
 `;
 
-const CoverBg = styled.div`
-  height: 500px;
-  background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
-    cover;
-  border-radius: 5px;
-  margin-bottom: 20px;
-`;
-
 const MovieTitle = styled.h4`
   font-size: 18px;
+  margin-top: 10px;
 `;
 
-const params = {
-  spaceBetween: 20,
-  slidesPerView: 4,
-};
+const ConWrap = styled.div`
+  padding: ${mainInt.sideInt};
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 50px;
+  row-gap: 50px;
+`;
+
+const Con = styled.div``;
+
+const Bg = styled.div`
+  height: 300px;
+  background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
+    cover;
+  border-radius: 15px;
+  background-color: #808080;
+`;
 
 export const ShowMovie = ({ movieData }) => {
   return (
@@ -44,16 +49,16 @@ export const ShowMovie = ({ movieData }) => {
         사람들이 좋아하는 <span>인기 상영작!</span>
       </Title>
 
-      <Swiper {...params}>
+      <ConWrap>
         {movieData.map((data) => (
-          <SwiperSlide key={data.id}>
+          <Con key={data.id}>
             <Link to={`/detail/${data.id}`}>
-              <CoverBg $bgUrl={data.poster_path} />
-              <MovieTitle>{data.title}</MovieTitle>
+              <Bg $bgUrl={data.backdrop_path} />
             </Link>
-          </SwiperSlide>
+            <MovieTitle>{data.title}</MovieTitle>
+          </Con>
         ))}
-      </Swiper>
+      </ConWrap>
     </Container>
   );
 };
