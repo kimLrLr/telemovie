@@ -1,22 +1,22 @@
+import { Swiper, SwiperSlide } from "swiper/react";
 import { useForm } from "react-hook-form";
 import { movieSearch } from "../../api";
 import { useState } from "react";
 import styled from "styled-components";
 import { IMG_URL } from "../../constants";
 import { mainInt, myColor } from "../../style/GlobalStyled";
+import { Link } from "react-router-dom";
 
 const Form = styled.form`
-  /* margin-top: 180px;
-  margin-bottom: 20px; */
   position: relative;
 `;
 
 const FormText = styled.h3`
-  line-height: 200px;
   text-align: center;
   font-size: 24px;
   color: ${myColor.mainColor};
   font-weight: 700;
+  margin-bottom: -12vh;
 `;
 
 const Input = styled.input`
@@ -35,7 +35,7 @@ const Button = styled.button`
   width: 100px;
 
   position: absolute;
-  top: 200px;
+  top: 22vh;
   right: 0;
   border: unset;
   background-color: ${myColor.mainColor};
@@ -58,25 +58,31 @@ const InWhiteSpace = styled.div`
 `;
 
 const SearchWhiteSpace = styled.div`
-  height: 21.5vh;
+  height: 22vh;
 `;
 
-const ConWrap = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  column-gap: 30px;
-  row-gap: 50px;
-`;
-
-const Con = styled.div``;
-
-const Bg = styled.div`
-  height: 300px;
+const CoverBg = styled.div`
+  height: 500px;
   background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
     cover;
+  border-radius: 15px;
+  margin-bottom: 20px;
+
+  @media screen and (max-width: 450px) {
+    height: 150px;
+    margin-bottom: 15px;
+  }
 `;
 
-const MovieTitle = styled.div``;
+const MovieTitle = styled.div`
+  font-size: 18px;
+  font-weight: 700;
+`;
+
+const params = {
+  spaceBetween: 20,
+  slidesPerView: 5,
+};
 
 export const Search = () => {
   const {
@@ -87,14 +93,12 @@ export const Search = () => {
     mode: "onSubmit",
   });
   const [term, setTerm] = useState();
-  const [loading, setLoading] = useState(true);
 
   const searchHandler = async (data) => {
     const { search: keyword } = data;
     try {
       const { results } = await movieSearch(keyword);
       setTerm(results);
-      setLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -125,14 +129,16 @@ export const Search = () => {
           </SearchWrap>
 
           {term && (
-            <ConWrap>
+            <Swiper {...params}>
               {term.map((data) => (
-                <Con key={data.id}>
-                  <Bg $bgUrl={data.backdrop_path} />
-                  <MovieTitle>{data.title}</MovieTitle>
-                </Con>
+                <SwiperSlide key={data.id}>
+                  <Link to={`/detail/${data.id}`}>
+                    <CoverBg $bgUrl={data.poster_path} />
+                    <MovieTitle>{data.title}</MovieTitle>
+                  </Link>
+                </SwiperSlide>
               ))}
-            </ConWrap>
+            </Swiper>
           )}
           <InWhiteSpace />
         </>
@@ -140,8 +146,9 @@ export const Search = () => {
         <>
           <WhiteSpace />
           <SearchWrap>
+            <FormText>찾으시는 영화가 있으신가요?</FormText>
             <Form onSubmit={handleSubmit(searchHandler)}>
-              <FormText>찾으시는 영화가 있으신가요?</FormText>
+              <SearchWhiteSpace />
               <Input
                 {...register("search", {
                   required: "검색할 영화 이름을 입력해주세요.",
@@ -156,6 +163,7 @@ export const Search = () => {
                 />
               </Button>
             </Form>
+            <InWhiteSpace />
           </SearchWrap>
           <WhiteSpace />
         </>
