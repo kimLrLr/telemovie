@@ -28,7 +28,7 @@ export const Home = () => {
     })();
   }, []);
 
-  console.log(popData);
+  // console.log(popData);
 
   return (
     <>

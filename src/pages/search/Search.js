@@ -6,9 +6,17 @@ import { IMG_URL } from "../../constants";
 import { mainInt, myColor } from "../../style/GlobalStyled";
 
 const Form = styled.form`
-  margin-top: 180px;
-  margin-bottom: 20px;
+  /* margin-top: 180px;
+  margin-bottom: 20px; */
   position: relative;
+`;
+
+const FormText = styled.h3`
+  line-height: 200px;
+  text-align: center;
+  font-size: 24px;
+  color: ${myColor.mainColor};
+  font-weight: 700;
 `;
 
 const Input = styled.input`
@@ -27,17 +35,30 @@ const Button = styled.button`
   width: 100px;
 
   position: absolute;
-  top: 0;
-  right: 0px;
+  top: 200px;
+  right: 0;
   border: unset;
   background-color: ${myColor.mainColor};
   border-radius: 30px;
+  cursor: pointer;
 `;
 
 const SearchWrap = styled.div`
   padding: ${mainInt.sideInt};
   width: 100vw;
   margin: 0 auto;
+  /* height: 68vh; */
+`;
+const WhiteSpace = styled.div`
+  height: 27vh;
+`;
+
+const InWhiteSpace = styled.div`
+  height: 5vh;
+`;
+
+const SearchWhiteSpace = styled.div`
+  height: 21.5vh;
 `;
 
 const ConWrap = styled.div`
@@ -58,8 +79,6 @@ const Bg = styled.div`
 const MovieTitle = styled.div``;
 
 export const Search = () => {
-  //api에 검색 요청에 맞게 url연결과 매개변수 작성할것
-  //form 사용시 useForm 사용할것
   const {
     register,
     handleSubmit,
@@ -68,45 +87,79 @@ export const Search = () => {
     mode: "onSubmit",
   });
   const [term, setTerm] = useState();
+  const [loading, setLoading] = useState(true);
 
   const searchHandler = async (data) => {
     const { search: keyword } = data;
     try {
       const { results } = await movieSearch(keyword);
       setTerm(results);
+      setLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <SearchWrap>
-      <Form onSubmit={handleSubmit(searchHandler)}>
-        <Input
-          {...register("search", {
-            required: "검색 내용을 입력해주세요.",
-          })}
-          type="text"
-          placeholder="찾으시는 영화가 있으신가요?"
-        />
-        <Button>
-          <img
-            src="https://cdn.discordapp.com/attachments/1071326637540524122/1180062807060914196/searchImg_w.png"
-            alt="흰색 돋보기 아이콘"
-          />
-        </Button>
-      </Form>
+    <>
+      {term ? (
+        <>
+          <SearchWrap>
+            <Form onSubmit={handleSubmit(searchHandler)}>
+              <SearchWhiteSpace />
+              <Input
+                {...register("search", {
+                  required: "검색할 영화 이름을 입력해주세요.",
+                })}
+                type="text"
+                placeholder="영화 이름을 알려주세요!"
+              />
+              <Button>
+                <img
+                  src="https://cdn.discordapp.com/attachments/1071326637540524122/1180062807060914196/searchImg_w.png"
+                  alt="흰색 돋보기 아이콘"
+                />
+              </Button>
+            </Form>
+            <InWhiteSpace />
+          </SearchWrap>
 
-      {term && (
-        <ConWrap>
-          {term.map((data) => (
-            <Con key={data.id}>
-              <Bg $bgUrl={data.backdrop_path} />
-              <MovieTitle>{data.title}</MovieTitle>
-            </Con>
-          ))}
-        </ConWrap>
+          {term && (
+            <ConWrap>
+              {term.map((data) => (
+                <Con key={data.id}>
+                  <Bg $bgUrl={data.backdrop_path} />
+                  <MovieTitle>{data.title}</MovieTitle>
+                </Con>
+              ))}
+            </ConWrap>
+          )}
+          <InWhiteSpace />
+        </>
+      ) : (
+        <>
+          <WhiteSpace />
+          <SearchWrap>
+            <Form onSubmit={handleSubmit(searchHandler)}>
+              <FormText>찾으시는 영화가 있으신가요?</FormText>
+              <Input
+                {...register("search", {
+                  required: "검색할 영화 이름을 입력해주세요.",
+                })}
+                type="text"
+                placeholder="영화 이름을 알려주세요!"
+              />
+              <Button>
+                <img
+                  src="https://cdn.discordapp.com/attachments/1071326637540524122/1180062807060914196/searchImg_w.png"
+                  alt="흰색 돋보기 아이콘"
+                />
+              </Button>
+            </Form>
+          </SearchWrap>
+          <WhiteSpace />
+        </>
       )}
-    </SearchWrap>
+    </>
   );
 };
