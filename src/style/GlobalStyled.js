@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
 export const mainInt = {
-  sideInt: "0 30px",
+  sideInt: "0 100px",
 };
 
 export const myColor = {

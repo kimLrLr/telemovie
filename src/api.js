@@ -28,3 +28,9 @@ export const movieSearch = (keyword) => {
   const searchUrl = baseUrl + `search/movie?query=${keyword}&language=ko-kr`;
   return fetch(searchUrl, options).then((res) => res.json());
 };
+
+export const rated = () =>
+  fetch(movieUrl("top_rated"), options).then((res) => res.json());
+
+export const upComing = () =>
+  fetch(movieUrl("upcoming"), options).then((res) => res.json());

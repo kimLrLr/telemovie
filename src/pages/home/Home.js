@@ -40,9 +40,7 @@ export const Home = () => {
             <>
               <PageTitle titleName="TeleMovie:HOME" />
               <MainShowMovie movieData={nowPlayingData} />
-              {/* 현재 상영중인 영화 3개만 보여주고싶음.(현재는 전체 list가 다 나오게 되어있음..) */}
               <MiniShowMovie movieData={nowPlayingData} />
-              {/* 앞에서 현재 상영중인 영화 3개를 제외하고 보여주고 싶음. */}
               <ShowMovie movieData={popData} />
             </>
           )}

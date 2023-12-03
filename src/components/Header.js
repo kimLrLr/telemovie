@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { routes } from "../routes";
 import styled from "styled-components";
 import { mainInt, myColor } from "../style/GlobalStyled";
+import { Popular } from "../pages/popular/Popular";
 
 const SHeader = styled.div`
   width: 100vw;
@@ -32,7 +33,6 @@ const HeaderBottom = styled.div`
 const Menu = styled.ul`
   display: flex;
   width: 45%;
-  text-align: center;
   line-height: 30px;
   font-size: 18px;
   font-weight: 700;
@@ -52,11 +52,10 @@ const Menu = styled.ul`
 `;
 
 const HeaderSearch = styled.div`
-  text-align: center;
   line-height: 30px;
   font-size: 18px;
   font-weight: 700;
-  width: 25%;
+  width: 8%;
 
   a {
     display: flex;
@@ -76,8 +75,6 @@ const HeaderSearch = styled.div`
   }
 `;
 
-const SearchImg = styled.div``;
-
 export const Header = () => {
   return (
     <SHeader>
@@ -93,16 +90,16 @@ export const Header = () => {
       <HeaderBottom>
         <Menu>
           <li>
-            <Link to={routes.popular}>액션</Link>
+            <Link to={routes.popular}>현재 상영작</Link>
           </li>
           <li>
-            <Link to={routes.popular}>코미디</Link>
+            <Link to={routes.popular}>인기 작품</Link>
           </li>
           <li>
-            <Link to={routes.popular}>스릴러</Link>
+            <Link to={routes.popular}>평점 좋은 영화</Link>
           </li>
           <li>
-            <Link to={routes.popular}>로맨스</Link>
+            <Link to={routes.popular}>개봉 예정작</Link>
           </li>
         </Menu>
 

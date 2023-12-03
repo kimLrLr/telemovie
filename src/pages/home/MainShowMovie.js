@@ -13,7 +13,6 @@ const MainBanner = styled.section`
 
 const PostWrap = styled.div`
   padding-top: 12vh;
-  /* margin-left: 10%; */
 `;
 
 const params = {
