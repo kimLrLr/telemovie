@@ -3,4 +3,8 @@ export const routes = {
   detail: "/detail/:id",
   search: "/search",
   popular: "/popular",
+  now: "/now",
+  coming: "/coming",
+  pop: "/pop",
+  rated: "/rated",
 };

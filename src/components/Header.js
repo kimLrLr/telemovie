@@ -90,16 +90,16 @@ export const Header = () => {
       <HeaderBottom>
         <Menu>
           <li>
-            <Link to={routes.popular}>현재 상영작</Link>
+            <Link to={routes.now}>현재 상영작</Link>
           </li>
           <li>
-            <Link to={routes.popular}>인기 작품</Link>
+            <Link to={routes.pop}>인기 작품</Link>
           </li>
           <li>
-            <Link to={routes.popular}>평점 좋은 영화</Link>
+            <Link to={routes.rated}>평점 좋은 영화</Link>
           </li>
           <li>
-            <Link to={routes.popular}>개봉 예정작</Link>
+            <Link to={routes.coming}>개봉 예정작</Link>
           </li>
         </Menu>
 

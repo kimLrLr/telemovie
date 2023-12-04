@@ -68,10 +68,10 @@ const CoverBg = styled.div`
   border-radius: 15px;
   margin-bottom: 20px;
 
-  @media screen and (max-width: 450px) {
+  /* @media screen and (max-width: 450px) {
     height: 150px;
     margin-bottom: 15px;
-  }
+  } */
 `;
 
 const MovieTitle = styled.div`
@@ -82,6 +82,20 @@ const MovieTitle = styled.div`
 const params = {
   spaceBetween: 20,
   slidesPerView: 5,
+  breakpoints: {
+    1024: {
+      spaceBetween: 15,
+      slidesPerView: 4.5,
+    },
+    640: {
+      spaceBetween: 15,
+      slidesPerView: 3.5,
+    },
+    320: {
+      spaceBetween: 5,
+      slidesPerView: 2.2,
+    },
+  },
 };
 
 export const Search = () => {

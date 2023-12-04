@@ -18,6 +18,20 @@ const CoverBg = styled.div`
 const params = {
   spaceBetween: 20,
   slidesPerView: 4.5,
+  breakpoints: {
+    1024: {
+      spaceBetween: 15,
+      slidesPerView: 4.5,
+    },
+    640: {
+      spaceBetween: 15,
+      slidesPerView: 3.5,
+    },
+    320: {
+      spaceBetween: 10,
+      slidesPerView: 2.2,
+    },
+  },
 };
 
 export const MiniShowMovie = ({ movieData }) => {
