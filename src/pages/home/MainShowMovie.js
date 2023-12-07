@@ -19,15 +19,13 @@ const PostWrap = styled.div`
 `;
 
 const params = {
-  spaceBetween: 20,
+  spaceBetween: 10,
   slidesPerView: 1.1,
   centeredSlides: true,
   loop: true, //반복
   autoplay: {
     delay: 2500,
-    disableOnInteraction: false, //스와이프 후에 자동 재생
   },
-
   modules: [Autoplay, Pagination, Navigation],
 };
 
@@ -35,15 +33,17 @@ export const MainShowMovie = ({ movieData }) => {
   return (
     <>
       <Swiper {...params}>
-        {movieData.map((data) => (
-          <SwiperSlide key={data.id}>
-            <PostWrap>
-              <Link to={`/detail/${data.id}`}>
-                <MainBanner $bgUrl={data.backdrop_path} />
-              </Link>
-            </PostWrap>
-          </SwiperSlide>
-        ))}
+        {movieData
+          .map((data) => (
+            <SwiperSlide key={data.id}>
+              <PostWrap>
+                <Link to={`/detail/${data.id}`}>
+                  <MainBanner $bgUrl={data.backdrop_path} />
+                </Link>
+              </PostWrap>
+            </SwiperSlide>
+          ))
+          .slice(0, 4)}
       </Swiper>
     </>
   );

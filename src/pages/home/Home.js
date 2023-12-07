@@ -28,8 +28,6 @@ export const Home = () => {
     })();
   }, []);
 
-  // console.log(popData);
-
   return (
     <>
       {isLoading ? (
@@ -38,7 +36,7 @@ export const Home = () => {
         <div>
           {nowPlayingData && (
             <>
-              <PageTitle titleName="TeleMovie:HOME" />
+              <PageTitle titleName="TeleMovie: Home" />
               <MainShowMovie movieData={nowPlayingData} />
               <MiniShowMovie movieData={nowPlayingData} />
               <ShowMovie movieData={popData} />

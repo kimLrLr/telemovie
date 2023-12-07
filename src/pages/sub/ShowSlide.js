@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IMG_URL } from "../../constants";
 
 const PostWrap = styled.div`
@@ -20,11 +20,14 @@ const params = {
   slidesPerView: 3.5,
 };
 
-export const ShowSlide = ({ movieData }) => {
+export const ShowSlide = () => {
+  const movieData = useLocation();
+
+  console.log(movieData);
   return (
     <>
       <Swiper {...params}>
-        {movieData.map((data) => (
+        {movieData.state.name.map((data) => (
           <SwiperSlide key={data.id}>
             <PostWrap>
               <Link to={`/detail/${data.id}`}>

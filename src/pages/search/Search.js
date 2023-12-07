@@ -17,6 +17,11 @@ const FormText = styled.h3`
   color: ${myColor.mainColor};
   font-weight: 700;
   margin-bottom: -12vh;
+
+  @media screen and (max-width: 450px) {
+    font-size: 20px;
+    margin-bottom: -15vh;
+  }
 `;
 
 const Input = styled.input`
@@ -29,6 +34,10 @@ const Input = styled.input`
   padding: 0 20px;
   font-size: 18px;
   font-weight: 700;
+
+  @media screen and (max-width: 450px) {
+    font-size: 15px;
+  }
 `;
 
 const Button = styled.button`
@@ -45,7 +54,7 @@ const Button = styled.button`
 
 const SearchWrap = styled.div`
   padding: ${mainInt.sideInt};
-  width: 100vw;
+  width: 99vw;
   margin: 0 auto;
   /* height: 68vh; */
 `;

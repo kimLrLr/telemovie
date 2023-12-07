@@ -38,13 +38,15 @@ export const MiniShowMovie = ({ movieData }) => {
   return (
     <Container>
       <Swiper {...params}>
-        {movieData.map((data) => (
-          <SwiperSlide key={data.id}>
-            <Link to={`/detail/${data.id}`}>
-              <CoverBg $bgUrl={data.poster_path} />
-            </Link>
-          </SwiperSlide>
-        ))}
+        {movieData
+          .map((data) => (
+            <SwiperSlide key={data.id}>
+              <Link to={`/detail/${data.id}`}>
+                <CoverBg $bgUrl={data.poster_path} />
+              </Link>
+            </SwiperSlide>
+          ))
+          .slice(4)}
       </Swiper>
     </Container>
   );

@@ -4,6 +4,7 @@ import { movieDetail } from "../../api";
 import { Loading } from "../Loading";
 import styled from "styled-components";
 import { IMG_URL } from "../../constants";
+import { PageTitle } from "../../components/PageTitle";
 
 const Con = styled.div`
   width: 100vw;
@@ -22,11 +23,13 @@ const Wrap = styled.div`
 
 const PosterImg = styled.div`
   background-color: salmon;
+  position: relative;
   width: 50%;
   height: 100%;
   margin-right: 80px;
   background: url(${IMG_URL}/w1280/${(props) => props.$bgUrl}) no-repeat center /
     cover;
+  overflow: hidden;
 `;
 
 const TxtWrap = styled.div`
@@ -104,6 +107,7 @@ export const Detail = () => {
         <>
           {movieDetail && (
             <>
+              <PageTitle titleName="LrLrMovie: movie detail" />
               <Con>
                 <Wrap>
                   <PosterImg $bgUrl={detailData.backdrop_path} />
@@ -118,7 +122,7 @@ export const Detail = () => {
                     </Genre>
                     <Release>개봉일: {detailData.release_date}</Release>
                     <Rated>평점 {Math.round(detailData.vote_average)}점</Rated>
-                    <Desc>{detailData.overview} </Desc>
+                    <Desc>{detailData.overview.slice(0, 300) + "..."} </Desc>
                   </TxtWrap>
                 </Wrap>
               </Con>

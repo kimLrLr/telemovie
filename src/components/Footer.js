@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 const FooterCon = styled.footer`
-  width: 100vw;
+  width: 99vw;
   background-color: #fff;
   padding: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-top: 1px solid #dbdbdb;
-  /* position: fixed;
-  left: 0;
+  position: relative;
+  /* left: 0;
   bottom: 0;
   z-index: 5; */
 `;

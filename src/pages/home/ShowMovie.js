@@ -17,11 +17,11 @@ const Title = styled.h3`
     color: ${myColor.mainColor};
     font-size: 25px;
   }
-`;
 
-const MovieTitle = styled.h4`
-  font-size: 18px;
-  margin-top: 10px;
+  @media screen and (max-width: 450px) {
+    padding: 0 10%;
+    text-align: center;
+  }
 `;
 
 const ConWrap = styled.div`
@@ -30,6 +30,13 @@ const ConWrap = styled.div`
   grid-template-columns: repeat(4, 1fr);
   column-gap: 50px;
   row-gap: 50px;
+
+  @media screen and (max-width: 450px) {
+    padding: 0 10%;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 0px;
+    row-gap: 40px;
+  }
 `;
 
 const Con = styled.div``;
@@ -40,6 +47,16 @@ const Bg = styled.div`
     cover;
   border-radius: 15px;
   background-color: #808080;
+`;
+
+const MovieTitle = styled.h4`
+  font-size: 18px;
+  margin-top: 10px;
+
+  @media screen and (max-width: 450px) {
+    font-weight: 600;
+    text-align: center;
+  }
 `;
 
 export const ShowMovie = ({ movieData }) => {
