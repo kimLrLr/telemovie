@@ -54,7 +54,7 @@ const Button = styled.button`
 
 const SearchWrap = styled.div`
   padding: ${mainInt.sideInt};
-  width: 99vw;
+  width: 100%;
   margin: 0 auto;
   /* height: 68vh; */
 `;

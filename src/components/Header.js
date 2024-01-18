@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { nowPlaying, popular, rated, upComing } from "../api";
 
 const SHeader = styled.div`
-  width: 99vw;
+  width: 100%;
   height: 12vh;
   display: flex;
   flex-direction: column;
