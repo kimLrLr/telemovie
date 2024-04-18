@@ -27,7 +27,7 @@ export const PageNotFound = () => {
       <PNFWrap>
         <h3>요청하신 페이지를 찾을 수 없습니다.</h3>
         <img
-          src="https://cdn.discordapp.com/attachments/1071326637540524122/1181500243326554152/404.png"
+          src={process.env.PUBLIC_URL + `/img/404.png`}
           alt="텔레무비 404 이미지"
         />
       </PNFWrap>

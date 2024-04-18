@@ -4,6 +4,9 @@ import styled from "styled-components";
 import { mainInt, myColor } from "../style/GlobalStyled";
 import { useEffect, useRef, useState } from "react";
 import { nowPlaying, popular, rated, upComing } from "../api";
+import logo from "../assets/logo.png";
+import menu_btn from "../assets/menu_btn.png";
+import searchImg from "../assets/searchImg.png";
 
 const SHeader = styled.div`
   width: 100%;
@@ -155,19 +158,13 @@ export const Header = () => {
     <SHeader ref={headerRef}>
       <Logo>
         <Link to={routes.home}>
-          <img
-            src="https://cdn.discordapp.com/attachments/1071326637540524122/1178952797169913866/logo.png"
-            alt="텔레무비 로고 이미지"
-          />
+          <img src={logo} alt="텔레무비 로고 이미지" />
         </Link>
       </Logo>
 
       <HeaderBottom>
         <MenuBtn>
-          <img
-            src="https://cdn.discordapp.com/attachments/1071326637540524122/1181515654021533726/menu_btn.png"
-            alt="햄버거"
-          />
+          <img src={menu_btn} alt="햄버거" />
         </MenuBtn>
         <Menu>
           <li>
@@ -195,10 +192,7 @@ export const Header = () => {
         <HeaderSearch>
           <Link to={routes.search}>
             <p>Search</p>
-            <img
-              src="https://cdn.discordapp.com/attachments/1071326637540524122/1178975235412865024/searchImg.png"
-              alt="search img"
-            />
+            <img src={searchImg} alt="search img" />
           </Link>
         </HeaderSearch>
       </HeaderBottom>

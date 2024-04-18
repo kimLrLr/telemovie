@@ -31,7 +31,7 @@ export const Loading = () => {
       <h3>열심히 화면을 그리는 중이에요..!</h3>
       <h5>잠시만 기다려주세요...</h5>
       <img
-        src="https://cdn.discordapp.com/attachments/1071326637540524122/1179983444504227850/loading_img.png"
+        src={process.env.PUBLIC_URL + `/img/loading_img.png`}
         alt="텔레무비 로딩 이미지"
       />
     </SLoading>

@@ -143,7 +143,7 @@ export const Search = () => {
               />
               <Button>
                 <img
-                  src="https://cdn.discordapp.com/attachments/1071326637540524122/1180062807060914196/searchImg_w.png"
+                  src={process.env.PUBLIC_URL + `/img/searchImg_w.png`}
                   alt="흰색 돋보기 아이콘"
                 />
               </Button>
@@ -181,7 +181,7 @@ export const Search = () => {
               />
               <Button>
                 <img
-                  src="https://cdn.discordapp.com/attachments/1071326637540524122/1180062807060914196/searchImg_w.png"
+                  src={process.env.PUBLIC_URL + `/img/searchImg_w.png`}
                   alt="흰색 돋보기 아이콘"
                 />
               </Button>
