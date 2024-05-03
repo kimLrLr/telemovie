@@ -129,23 +129,23 @@ export const Header = () => {
   const [ratedData, setRatedData] = useState();
   const [showLogo, setShowLogo] = useState("flex");
 
-  const scrollHandler = () => {
-    const pageY = window.scrollY;
-
-    if (pageY > 300) {
-      setShowLogo("none");
-      headerRef.current.style.position = "fixed";
-      headerRef.current.style.backgroundColor = "rgba(255,255,255,0.8)";
-      headerRef.current.style.backdropFilter = "blur(3px)";
-    } else {
-      setShowLogo("flex");
-      headerRef.current.style.position = "absolute";
-      headerRef.current.style.backgroundColor = "#fff";
-      headerRef.current.style.backdropFilter = "blur(0px)";
-    }
-  };
-
   useEffect(() => {
+    const scrollHandler = () => {
+      const pageY = window.scrollY;
+
+      if (pageY > 300) {
+        setShowLogo("none");
+        headerRef.current.style.position = "fixed";
+        headerRef.current.style.backgroundColor = "rgba(255,255,255,0.8)";
+        headerRef.current.style.backdropFilter = "blur(3px)";
+      } else {
+        setShowLogo("flex");
+        headerRef.current.style.position = "absolute";
+        headerRef.current.style.backgroundColor = "#fff";
+        headerRef.current.style.backdropFilter = "blur(0px)";
+      }
+    };
+
     return window.addEventListener("scroll", scrollHandler);
   });
 
