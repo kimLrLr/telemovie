@@ -10,10 +10,8 @@ import searchImg from "../assets/searchImg.png";
 
 const SHeader = styled.div`
   width: 100%;
-  height: 12vh;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #dbdbdb;
   padding: ${mainInt.sideInt};
   background-color: #fff;
   position: absolute;
@@ -21,8 +19,9 @@ const SHeader = styled.div`
   top: 0;
   left: 0;
   z-index: 10;
+  background-color: #fff;
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 768px) {
     padding: 0 10%;
   }
 `;
@@ -33,6 +32,12 @@ const Logo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+  }
+
+  @media screen and (max-width: 768px) {
+  }
 `;
 
 const HeaderBottom = styled.div`
@@ -42,10 +47,11 @@ const HeaderBottom = styled.div`
 
 const Menu = styled.ul`
   display: flex;
-  width: 45%;
+  width: 50%;
   line-height: 30px;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
+  height: 5vh;
 
   li {
     width: 25%;
@@ -60,19 +66,25 @@ const Menu = styled.ul`
     color: ${myColor.mainColor};
   }
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    font-size: 16px;
+    width: 80%;
+  }
+
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `;
 
 const HeaderSearch = styled.div`
   line-height: 30px;
-  font-size: 18px;
   font-weight: 700;
-  width: 12%;
 
   p {
-    @media screen and (max-width: 450px) {
+    display: block;
+    font-size: 16px;
+
+    @media screen and (max-width: 1024px) {
       display: none;
     }
   }
@@ -92,13 +104,14 @@ const HeaderSearch = styled.div`
   img {
     width: 40px;
     margin-bottom: -5px;
+    margin-left: 5px;
   }
 `;
 
 const MenuBtn = styled.div`
   display: none;
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 768px) {
     display: block;
   }
 
