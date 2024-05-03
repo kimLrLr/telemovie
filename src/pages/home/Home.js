@@ -6,6 +6,7 @@ import { ShowMovie } from "./ShowMovie";
 import "swiper/css";
 import { MainShowMovie } from "./MainShowMovie";
 import { MiniShowMovie } from "./MiniShowMovie";
+import { TopButton } from "../../components/TopButton";
 
 export const Home = () => {
   const [nowPlayingData, setNowPlayingData] = useState();
@@ -40,6 +41,7 @@ export const Home = () => {
               <MainShowMovie movieData={nowPlayingData} />
               <MiniShowMovie movieData={nowPlayingData} />
               <ShowMovie movieData={popData} />
+              <TopButton />
             </>
           )}
         </div>
