@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/telemovie/static/css/main.5b3d7c9a.css",
-    "main.js": "/telemovie/static/js/main.c0c07601.js",
+    "main.js": "/telemovie/static/js/main.e0549cc4.js",
     "index.html": "/telemovie/index.html",
     "main.5b3d7c9a.css.map": "/telemovie/static/css/main.5b3d7c9a.css.map",
-    "main.c0c07601.js.map": "/telemovie/static/js/main.c0c07601.js.map"
+    "main.e0549cc4.js.map": "/telemovie/static/js/main.e0549cc4.js.map"
   },
   "entrypoints": [
     "static/css/main.5b3d7c9a.css",
-    "static/js/main.c0c07601.js"
+    "static/js/main.e0549cc4.js"
   ]
 }
