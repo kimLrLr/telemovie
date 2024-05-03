@@ -29,20 +29,15 @@ const SHeader = styled.div`
 const Logo = styled.div`
   margin: 8px auto;
   width: 20%;
-  display: flex;
-  justify-content: center;
+  display: ${(props) => props.$imgLogo};
   align-items: center;
-
-  @media screen and (max-width: 1024px) and (min-width: 768px) {
-  }
-
-  @media screen and (max-width: 768px) {
-  }
+  justify-content: center;
 `;
 
 const HeaderBottom = styled.div`
   display: flex;
   justify-content: space-between;
+  height: 10vh;
 `;
 
 const Menu = styled.ul`
@@ -51,7 +46,8 @@ const Menu = styled.ul`
   line-height: 30px;
   font-size: 17px;
   font-weight: 700;
-  height: 5vh;
+  height: 8vh;
+  align-items: center;
 
   li {
     width: 25%;
@@ -79,6 +75,8 @@ const Menu = styled.ul`
 const HeaderSearch = styled.div`
   line-height: 30px;
   font-weight: 700;
+  display: flex;
+  align-items: center;
 
   p {
     display: block;
@@ -112,11 +110,13 @@ const MenuBtn = styled.div`
   display: none;
 
   @media screen and (max-width: 768px) {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   img {
-    width: 65%;
+    width: 30px;
   }
 `;
 
@@ -127,18 +127,19 @@ export const Header = () => {
   const [upData, setUpData] = useState();
   const [popData, setPopData] = useState();
   const [ratedData, setRatedData] = useState();
+  const [showLogo, setShowLogo] = useState("flex");
 
   const scrollHandler = () => {
     const pageY = window.scrollY;
 
     if (pageY > 300) {
+      setShowLogo("none");
       headerRef.current.style.position = "fixed";
-      headerRef.current.style.top = "-5vh";
       headerRef.current.style.backgroundColor = "rgba(255,255,255,0.8)";
       headerRef.current.style.backdropFilter = "blur(3px)";
     } else {
+      setShowLogo("flex");
       headerRef.current.style.position = "absolute";
-      headerRef.current.style.top = "0";
       headerRef.current.style.backgroundColor = "#fff";
       headerRef.current.style.backdropFilter = "blur(0px)";
     }
@@ -169,7 +170,7 @@ export const Header = () => {
   }, []);
   return (
     <SHeader ref={headerRef}>
-      <Logo>
+      <Logo $imgLogo={showLogo}>
         <Link to={routes.home}>
           <img src={logo} alt="텔레무비 로고 이미지" />
         </Link>
