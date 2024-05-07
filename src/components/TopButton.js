@@ -6,7 +6,7 @@ const TopBtn = styled.button`
   position: fixed;
   bottom: 5%;
   right: 5%;
-  z-index: 10;
+  z-index: 5;
   background: #f64d4da3;
   border: 0;
   border-radius: 50%;

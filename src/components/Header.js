@@ -5,8 +5,8 @@ import { mainInt, myColor } from "../style/GlobalStyled";
 import { useEffect, useRef, useState } from "react";
 import { nowPlaying, popular, rated, upComing } from "../api";
 import logo from "../assets/logo.png";
-import menu_btn from "../assets/menu_btn.png";
 import searchImg from "../assets/searchImg.png";
+import { HamBtn } from "./HamBtn";
 
 const SHeader = styled.div`
   width: 100%;
@@ -106,20 +106,6 @@ const HeaderSearch = styled.div`
   }
 `;
 
-const MenuBtn = styled.div`
-  display: none;
-
-  @media screen and (max-width: 768px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  img {
-    width: 30px;
-  }
-`;
-
 export const Header = () => {
   const headerRef = useRef();
 
@@ -177,9 +163,7 @@ export const Header = () => {
       </Logo>
 
       <HeaderBottom>
-        <MenuBtn>
-          <img src={menu_btn} alt="햄버거" />
-        </MenuBtn>
+        <HamBtn />
         <Menu>
           <li>
             <Link to={routes.slide} state={{ name: nowData }}>
