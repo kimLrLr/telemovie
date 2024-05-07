@@ -86,6 +86,16 @@ export const HamBtn = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const openHandler = () => {
+    setIsOpen(!isOpen);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeHandler = () => {
+    setIsOpen(!isOpen);
+    document.body.style.overflow = "unset";
+  };
+
   useEffect(() => {
     (async () => {
       try {
@@ -109,25 +119,25 @@ export const HamBtn = () => {
   return (
     <>
       {!isOpen && (
-        <MenuBtn onClick={() => setIsOpen(!isOpen)}>
+        <MenuBtn onClick={openHandler}>
           <img src={menu_btn} alt="햄버거" />
         </MenuBtn>
       )}
       {isOpen && (
         <>
-          <CloseBtn onClick={() => setIsOpen(!isOpen)}>X</CloseBtn>
+          <CloseBtn onClick={closeHandler}>X</CloseBtn>
           <SMenu>
-            <li onClick={() => setIsOpen(!isOpen)}>
+            <li onClick={closeHandler}>
               <Link to={routes.slide} state={{ name: nowData }}>
                 현재 상영작
               </Link>
             </li>
-            <li onClick={() => setIsOpen(!isOpen)}>
+            <li onClick={closeHandler}>
               <Link to={routes.slide} state={{ name: popData }}>
                 인기 작품
               </Link>
             </li>
-            <li onClick={() => setIsOpen(!isOpen)}>
+            <li onClick={closeHandler}>
               <Link to={routes.slide} state={{ name: ratedData }}>
                 평점 좋은 영화
               </Link>
