@@ -48,6 +48,7 @@ const Menu = styled.ul`
   font-weight: 700;
   height: 8vh;
   align-items: center;
+  text-align: center;
 
   li {
     width: 25%;
