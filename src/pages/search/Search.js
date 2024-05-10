@@ -18,9 +18,13 @@ const FormText = styled.h3`
   font-weight: 700;
   margin-bottom: -12vh;
 
-  @media screen and (max-width: 450px) {
-    font-size: 20px;
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    font-size: 18px;
     margin-bottom: -15vh;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
   }
 `;
 
@@ -35,8 +39,14 @@ const Input = styled.input`
   font-size: 18px;
   font-weight: 700;
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  @media screen and (max-width: 768px) {
     font-size: 15px;
+    font-weight: 500;
   }
 `;
 
@@ -56,7 +66,6 @@ const SearchWrap = styled.div`
   padding: ${mainInt.sideInt};
   width: 100%;
   margin: 0 auto;
-  /* height: 68vh; */
 `;
 const WhiteSpace = styled.div`
   height: 27vh;
@@ -71,16 +80,11 @@ const SearchWhiteSpace = styled.div`
 `;
 
 const CoverBg = styled.div`
-  height: 500px;
+  height: 45vh;
   background: url(${IMG_URL}/w500/${(props) => props.$bgUrl}) no-repeat center /
     cover;
   border-radius: 15px;
   margin-bottom: 20px;
-
-  /* @media screen and (max-width: 450px) {
-    height: 150px;
-    margin-bottom: 15px;
-  } */
 `;
 
 const MovieTitle = styled.div`
@@ -98,11 +102,11 @@ const params = {
     },
     640: {
       spaceBetween: 15,
-      slidesPerView: 3.5,
+      slidesPerView: 2.8,
     },
     320: {
       spaceBetween: 5,
-      slidesPerView: 2.2,
+      slidesPerView: 1.7,
     },
   },
 };
@@ -139,7 +143,7 @@ export const Search = () => {
                   required: "검색할 영화 이름을 입력해주세요.",
                 })}
                 type="text"
-                placeholder="영화 이름을 알려주세요!"
+                placeholder="이름 검색"
               />
               <Button>
                 <img
@@ -177,7 +181,7 @@ export const Search = () => {
                   required: "검색할 영화 이름을 입력해주세요.",
                 })}
                 type="text"
-                placeholder="영화 이름을 알려주세요!"
+                placeholder="이름 검색"
               />
               <Button>
                 <img

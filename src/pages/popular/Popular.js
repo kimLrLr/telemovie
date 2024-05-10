@@ -40,8 +40,6 @@ export const Popular = () => {
     })();
   }, []);
 
-  console.log(nowPlayingData);
-
   return (
     <>
       {isLoading ? (

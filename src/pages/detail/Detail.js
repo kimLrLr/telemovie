@@ -80,7 +80,6 @@ const Desc = styled.div`
 export const Detail = () => {
   const { id } = useParams();
   // =>다른 곳에서도 사용할 수 있도록 useParams사용
-  console.log(id);
   const [detailData, setDetailData] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -88,7 +87,6 @@ export const Detail = () => {
     (async () => {
       try {
         const detailData = await movieDetail(id);
-        // console.log(detailData);
         setDetailData(detailData);
         setLoading(false);
       } catch (error) {
@@ -96,8 +94,6 @@ export const Detail = () => {
       }
     })();
   }, [id]);
-
-  // console.log(detailData);
 
   return (
     <>

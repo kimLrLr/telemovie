@@ -18,12 +18,24 @@ const MainBanner = styled.div`
 const params = {
   spaceBetween: 20,
   slidesPerView: 3.5,
+  breakpoints: {
+    1024: {
+      spaceBetween: 15,
+      slidesPerView: 4.5,
+    },
+    640: {
+      spaceBetween: 15,
+      slidesPerView: 2.8,
+    },
+    320: {
+      spaceBetween: 5,
+      slidesPerView: 1.7,
+    },
+  },
 };
 
 export const ShowSlide = () => {
   const movieData = useLocation();
-
-  console.log(movieData);
   return (
     <>
       <Swiper {...params}>

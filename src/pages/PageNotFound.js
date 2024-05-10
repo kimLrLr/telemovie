@@ -19,6 +19,18 @@ const PNFWrap = styled.section`
   img {
     width: 50%;
   }
+
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    h3 {
+      font-size: 23px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    h3 {
+      font-size: 18px;
+    }
+  }
 `;
 
 export const PageNotFound = () => {

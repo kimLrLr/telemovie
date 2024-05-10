@@ -31,7 +31,11 @@ const ConWrap = styled.div`
   column-gap: 50px;
   row-gap: 50px;
 
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+  }
+  @media screen and (max-width: 768px) {
     padding: 0 10%;
     grid-template-columns: repeat(1, 1fr);
     column-gap: 0px;
